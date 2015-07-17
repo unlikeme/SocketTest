@@ -6,11 +6,10 @@ public class LibSock {
 	public static final int SERVER = 0x10;
 	public static final int CLIENT = 0x11;
 	
-	
 	private int mType;
 	
-	public LibSock(){
-		
+	public LibSock(int type) throws LibSockException{
+		init(type);
 	}
 	
 	public void init(int type) throws LibSockException{
@@ -19,6 +18,7 @@ public class LibSock {
 		}
 		mType = type;
 	}
+
 	
 	private boolean checkInit(){
 		return isValidType(mType);
